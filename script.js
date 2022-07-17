@@ -21,11 +21,11 @@ function playRound(playerSelection) {
     (playerSelection == 'scissors' && computerSelection == 'paper') ||
     (playerSelection == 'paper' && computerSelection == 'rock')) {
     
-    if (playerScore < 5) {
+    if (playerScore < 4) {
       playerScore += 1
       result = (`You win! ${playerSelection} beats ${computerSelection}`)
-
     } else {
+      playerScore += 1
       result += 'You won the game! <br> You Can Live... For Now!!'
       document.getElementById('result').style.color = 'blue'
       disableButtons()
@@ -35,10 +35,11 @@ function playRound(playerSelection) {
     result = (`It's a tie. You both chose ${playerSelection}`)
   }
   else {
-    if (computerScore < 5) { 
+    if (computerScore < 4) { 
       computerScore += 1
       result = (`You lose! ${computerSelection} beats ${playerSelection}`)
     } else {
+      computerScore +=1
       result += 'I won the game! <br> Now You Are Dead!!'
       document.getElementById('result').style.color = 'red'
       disableButtons()
